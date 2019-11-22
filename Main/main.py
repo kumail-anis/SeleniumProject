@@ -1,17 +1,30 @@
 from selenium import webdriver
 import time
+import socket
+import platform
 
-#Load the driver for chrome and set the website
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument('--no-sandbox')
-chrome_options.add_argument('--window-size=1420,1080')
-chrome_options.add_argument('--headless')
-chrome_options.add_argument('--disable-gpu')
-driver = webdriver.Chrome(chrome_options=chrome_options)
+#checking the host of the computer
+name = socket.gethostname()
+system = platform.system()
+
+
 #driver.set_page_load_timeout("10")
+
+
+if len(name) == 12 and system == 'Linux':
+    #Load the driver for chrome for docker system
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--window-size=1420,1080')
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-gpu')
+    driver = webdriver.Chrome(chrome_options=chrome_options)
+else:
+    #Load the driver for chrome in local system
+    driver = webdriver.Chrome("drivers/chromedriver")
+    driver.set_page_load_timeout("10")
+
 driver.get("http://the-internet.herokuapp.com/")
-
-
 
 def seleniumproject():
 
