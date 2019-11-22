@@ -39,9 +39,7 @@ or run the project in your favorable Python IDE.
 ## TODO TASKS!
 This project is incomplete as the following tasks must be achieved in order for suitable delivery:
 
-1- use single file for running the selenium program rather than using main.py and localmain.py
-
-2- use of proper stoppers instead of implicitly_wait
+1- use of proper stoppers instead of implicitly_wait
 
 
 ## Contributing
