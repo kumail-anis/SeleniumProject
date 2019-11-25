@@ -40,6 +40,7 @@ or run the project in your favorable Python IDE.
 This project is incomplete as the following tasks must be achieved in order for suitable delivery:
 
 1- use of proper stoppers instead of implicitly_wait
+
 2- Use page objects to seperate code
 
 
